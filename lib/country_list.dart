@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_niko2/country_item.dart';
-import 'package:flutter_niko2/data/countyDetail.dart';
+import 'package:flutter_niko2/data/county_detail.dart';
 import 'package:flutter_niko2/model/country.dart';
 
 class CountryList extends StatelessWidget {
