@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_niko2/country_detail.dart';
 import 'package:flutter_niko2/model/country.dart';
 
 class CountryItem extends StatelessWidget {
@@ -8,15 +9,33 @@ class CountryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        leading: Image.asset(
-          "assets/" + ListCountry.countryPicture,
-          width: 64,
-          height: 64,
+    var Textstyle = Theme.of(context).textTheme;
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Card(
+        elevation: 3,
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: ListTile(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: ((context) =>
+                      CountryDetaill(selectCountry: ListCountry)),
+                ),
+              );
+            },
+            leading: Image.asset(
+              "assets/" + ListCountry.countryPicture,
+              width: 64,
+              height: 64,
+            ),
+            title: Text(
+              ListCountry.countryId,
+              style: Textstyle.headline5,
+            ),
+          ),
         ),
-        title: Text(ListCountry.countryId),
-        subtitle: Text(ListCountry.countryCapital),
       ),
     );
   }

@@ -31,13 +31,13 @@ class CountryList extends StatelessWidget {
   List<Country> dateSource() {
     List<Country> interim = [];
 
-    for (int i = 0; i < 11; i++) {
+    for (int i = 0; i < 10; i++) {
       var countryId = Strings.Country_Id[i];
       var countryCapital = Strings.Country_Capital[i];
       var countryDetail = Strings.Country_Detail[i];
       var countryPicture = Strings.Country_Id[i].toLowerCase() + "${i + 1}.jpg";
       var capitalPicture =
-          Strings.Country_Id[i].toLowerCase() + "_buyuk" + "${i + 1}.jpg";
+          Strings.Country_Capital[i].toLowerCase() + "_buyuk" + "${i + 1}.jpg";
 
       Country addcountry = Country(countryId, countryCapital, countryDetail,
           countryPicture, capitalPicture);
